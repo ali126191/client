@@ -8,26 +8,41 @@
 body {
   font-family: Roboto,Arial, Helvetica, sans-serif;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Block    *****************************************************************************************************/
 .h1 {
-  font-size: 45px;
+  font-size: 40px;
   text-align: center;
 }
 
 .h2 {
   padding: 10px;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+
+.h3 {
+  font-weight: 300;
+  padding: 15px;
+  font-size: 1.7rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .h4 {
   margin: 10px;
-  font-size: 1.4rem;
+  font-size: 2.1rem;
   font-weight: 300;
   text-transform: capitalize;
+}
+
+.h5 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin: 8px;
 }
 
 .img {
@@ -48,7 +63,7 @@ body {
 
 .hero {
   height: 60vh;
-  background-image: url("https://cdn.pixabay.com/photo/2016/01/17/02/07/cctv-1144366_960_720.jpg"), url("https://cdn.pixabay.com/photo/2016/01/17/02/07/cctv-1144366_960_720.jpg");
+  background-image: url("./images/living-room-2732939_1920.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20% 60%;
@@ -88,7 +103,7 @@ body {
 }
 
 .wrapper--text {
-  color: #000;
+  color: #666;
 }
 
 .full-page {
@@ -180,12 +195,27 @@ body {
           box-shadow: 2px 2px 9px 2px #555;
 }
 
-.h4--center {
-  text-align: left;
+.h2--margin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 150px;
+  margin: 50px 0;
+  background: purple;
 }
 
-.h2--thin {
-  font-weight: 300;
+.h3--grey {
+  color: #666;
+}
+
+.h4--margin {
+  margin-top: 40px;
 }
 
 .contact--margin {
@@ -198,7 +228,7 @@ body {
 }
 
 .text-size {
-  marign: 20px;
+  font-size: 1.1rem;
 }
 
 .form {
@@ -209,7 +239,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 50px auto;
+  margin: 40px auto;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -291,12 +321,8 @@ body {
   .full-page {
     padding: 60px;
   }
-  .h2 {
-    padding: 25px;
-    font-size: 2.5rem;
-  }
   .text {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .text--black {
     color: #777;

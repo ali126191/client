@@ -1,0 +1,318 @@
+// This stylesheet is written in BEM
+
+// Block = .block
+// Element = .block__element
+// Modifier = .block__element--modifier / .block--modifier
+
+$golbal-color: #fff
+$header-height: 80px
+$header-padding: 0.6rem
+$logo-image: 4rem
+$section-padding: 25px 0
+$wrapper-text: #666
+//General
+$container-max-width: 1440px
+// Text sizing
+$h1-font-size: 40px
+$h2-font-size: 2.0rem
+$h4-font-size: 2.1rem
+$h5-font-size: 1.6rem
+$global-Text-Size: 1.0rem
+
+$Contact-icon-size: 25px
+$button-background: #e67e22
+
+// =border-radius($h2-font-size) //mixin
+//     font: $h2-font-size
+//     border-radius: 15%
+
+// .article
+//     +border-radius(10px)
+    
+// %hide-text               //extend
+//     background: black
+// .foo
+//     @ extend %hide-text
+
+* 
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+body 
+    font-family: Roboto,Arial, Helvetica, sans-serif
+    color: $golbal-color
+    font-size: $global-Text-Size
+
+/* Block    *****************************************************************************************************/
+
+.h1 
+    font-size: $h1-font-size
+    text-align: center
+
+.h2
+    padding: 10px
+    font-weight: 300
+    font-size: $h2-font-size
+.h3
+    font-weight: 300
+    padding: 15px
+    font-size: 1.7rem
+    font-weight: 300
+    text-transform: capitalize
+    text-align: center
+       
+.h4 
+    margin: 10px
+    font-size: $h4-font-size
+    font-weight: 300
+    text-transform: capitalize
+.h5
+    font-size: $h5-font-size
+    font-weight: 300
+    margin: 8px
+
+
+
+.img
+    max-width: 100%
+    display: block
+
+.button
+    margin: 15px
+    background: $button-background
+    border: 0
+    padding: 10px
+ 
+.section 
+    padding: $section-padding
+
+.hero    
+    height: 60vh
+    background-image: url("./images/living-room-2732939_1920.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 20% 60%
+    display: flex
+    align-items: center
+    justify-content: center
+
+.container
+    margin: 0 auto
+    max-width: $container-max-width
+    padding: 50px 10px
+
+.wrapper 
+    margin-top: 10%
+    flex: 2
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    max-height: 100%
+
+.wrapper--text
+    color: $wrapper-text
+
+.full-page
+    padding: 20px
+    background: #3498db
+    text-align: center
+
+.services
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+
+.service
+    padding: 0px 0px 15px
+    background: #1abc9c
+    margin: 20px 0px
+
+.split 
+    // background: #e67e22
+
+.gallery
+
+.contact
+    padding: 20px
+    text-align: center
+    background: #27ae60
+
+
+.map-responsive
+    overflow: hidden
+    padding-bottom: 56.25%
+    position: relative
+    height: 0
+
+/* Element    *****************************************************************************************************/
+
+
+.split__left
+    padding: 45px
+    display: inline-block
+    background: #c0392b
+
+.split__right
+    padding: 45px
+    display: inline-block
+    background: #2980b9
+
+.full-page__a
+    text-decoration: none
+    color: white   
+
+.contact__timming
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.contact__block
+    display: flex
+    justify-content: center
+    align-items: center
+
+/* Modifiers    *****************************************************************************************************/    
+
+.flex--img-shadow
+    border-radius: 5%
+    box-shadow: 2px 2px 9px 2px #555
+
+.h2--margin
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 150px
+    margin: 50px 0
+    background: purple
+
+.h3--grey
+    color: #666
+
+
+.h4--margin
+    margin-top: 40px
+
+
+.contact--margin
+    margin: 7px
+    font-size: 1.3rem
+
+%Contact-icon-size
+    font-size: $Contact-icon-size
+
+.contact--far
+    @extend %Contact-icon-size
+
+.contact--fas
+    @extend %Contact-icon-size
+
+.text-size
+    font-size: $global-Text-Size * 1.1
+.form
+    display: flex
+    flex-direction: column
+    margin: 40px auto
+    justify-content: flex-end
+    align-items: center
+    max-width: 900px
+
+.form__element
+    margin: 10px
+    width: 80%
+
+.form__label
+    font-size: 0.8rem
+    display: block
+    text-align: left
+    margin-bottom: 3px
+.form__input
+    width: 100%
+    border: none
+    padding: 4px
+.form__textarea
+    width: 100%
+
+.block
+    text-align: center
+    margin: 4px 0
+    width: 100%
+    flex: 1 1 100%
+.form__submit
+    background: #3498db
+    border: 0
+    border: 1px solid #2980b9
+    color: #ffffff
+    box-shadow: 2px 2px 10px 1px #444
+    padding: 8px
+    margin: 5px 0
+    width: 100%
+    max-width: 300px
+
+
+/* Media Queries    ************************************************************************************************/
+
+$breakpoint-tablet: 768px
+@media screen and (min-width: $breakpoint-tablet) 
+
+    .container 
+        padding: 80px 60px
+    .flex
+        display: flex
+        justify-content: space-between
+        align-items: center  //check this line later
+    .wrapper 
+        margin-top: 0
+    .img-wrapper
+        margin-right: 8%
+        flex: 3
+        
+    .full-page
+        padding: 60px
+    .text
+        font-size: $global-Text-Size
+
+    .text--black
+        color: #777
+
+    .button
+        margin: 40px
+ 
+    .services
+        width: 100%
+        height: auto
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-around
+    
+    .service
+        flex: 1 1 300px
+        margin: 15px
+                    
+    .split
+        display: flex
+    
+    %split__padding
+        padding: 50px
+    .left
+        @extend %split__padding 
+    .right
+        @extend %split__padding
+
+    .h4--center
+        margin: 25px
+        font-size: 85px
+        font-weight: 300
+
+    .gallery__images
+        display: flex
+        flex-wrap: wrap
+    
+    .img__wrapper
+        flex: 1 1 30%
+
+    .gallery__img:hover
+        cursor: pointer
+        transform: scale(1.1)
+        transition-duration: 0.2s
