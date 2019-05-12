@@ -10,29 +10,18 @@ $header-padding: 0.6rem
 $logo-image: 4rem
 $section-padding: 25px 0
 $wrapper-text: #666
+$blue-color: #2980b9
 //General
 $container-max-width: 1440px
 // Text sizing
 $h1-font-size: 40px
-$h2-font-size: 2.0rem
+$h2-font-size: 1.3rem
 $h4-font-size: 2.1rem
 $h5-font-size: 1.6rem
 $global-Text-Size: 1.0rem
 
 $Contact-icon-size: 25px
 $button-background: #e67e22
-
-// =border-radius($h2-font-size) //mixin
-//     font: $h2-font-size
-//     border-radius: 15%
-
-// .article
-//     +border-radius(10px)
-    
-// %hide-text               //extend
-//     background: black
-// .foo
-//     @ extend %hide-text
 
 * 
     box-sizing: border-box
@@ -49,11 +38,31 @@ body
 .h1 
     font-size: $h1-font-size
     text-align: center
+.statement
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 40vh
+    // background: purple
+    padding: 20px
+
 
 .h2
     padding: 10px
     font-weight: 300
     font-size: $h2-font-size
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    height: 150px
+    margin: 50px 0
+    letter-spacing: 1.1px
+    border: 1px solid #3498db
+    color: $blue-color
+    max-width: 800px
+    margin: 0 auto
+
 .h3
     font-weight: 300
     padding: 15px
@@ -61,6 +70,7 @@ body
     font-weight: 300
     text-transform: capitalize
     text-align: center
+    margin: 30px 0 25px 0
        
 .h4 
     margin: 10px
@@ -72,6 +82,13 @@ body
     font-weight: 300
     margin: 8px
 
+.h6
+    color: #444
+    font-size: 1.4rem
+    font-weight: 500
+    margin-bottom: 25px
+    text-align: left
+    letter-spacing: 1.1px
 
 
 .img
@@ -89,26 +106,29 @@ body
 
 .hero    
     height: 60vh
-    background-image: url("./images/living-room-2732939_1920.jpg")
-    background-repeat: no-repeat
+    background:  url('./images/barber-1453064_1920.jpg') no-repeat center
     background-size: cover
-    background-position: 20% 60%
+    // background-position: 20% 60%
     display: flex
     align-items: center
     justify-content: center
+    position: relative
+.hero h1 
+    position: relative
+    z-index: 2
+.hero::after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.6)
 
 .container
     margin: 0 auto
     max-width: $container-max-width
     padding: 50px 10px
-
-.wrapper 
-    margin-top: 10%
-    flex: 2
-    display: flex
-    flex-direction: column
-    justify-content: space-evenly
-    max-height: 100%
 
 .wrapper--text
     color: $wrapper-text
@@ -119,59 +139,205 @@ body
     text-align: center
 
 .services
-    display: flex
+    displeay: flex
     flex-direction: column
-    justify-content: space-between
-    text-align: center
+    justify-content: center
+    margin: 0 auto
 
-.service
-    padding: 0px 0px 15px
-    background: #1abc9c
-    margin: 20px 0px
+.services__h3
+    display: block
+    color: $blue-color
+    letter-spacing: 1.4px
+    margin-bottom: 20px
 
-.split 
-    // background: #e67e22
+.h3__standard
+    display: block
+    color: $blue-color
+    letter-spacing: 1.4px
+    margin-bottom: 20px
 
-.gallery
+.service__chunk
+    margin: 50px 0px
+
+.services__p
+    text-align: left
+    color: #555
+    margin: 10px
+    font-size: 1.2rem
+    font-weight: 300
 
 .contact
-    padding: 20px
-    text-align: center
-    background: #27ae60
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-end
+    max-width: 1200px
+    margin: 0 auto
 
+.number
+    text-align: center
+    color: #666
+    font-size: 22px
+    margin: 10px
+
+.address
+    text-align: center
+    color: #666
+    font-size: 20px
+    margin: 10px
+.city
+    text-align: center
+    color: #666
+    font-size: 16px
+    margin: 6px
+
+.email
+    text-align: center
+    color: #666
+    font-size: 16px
+    margin: 15px
+
+.social
+    display: flex
+    justify-content: center
+
+
+.icon
+    text-align: center
+    margin: 10px
+    font-size: 30px
+
+.fab
+    color: #666
+
+.logo
+    color: purple
+    font-size: 32px
+    text-align: center
+
+.carousel-wrapper 
+  margin: 0 auto
+  overflow: hidden
+  width: 100%
+
+.carousel 
+  transform-style: preserve-3d
+
+.carousel__photo 
+  opacity: 0
+  position: absolute
+  top: 0
+  width: 100%
+  margin: auto
+  padding: 0rem 1.8rem
+  z-index: 100
+  transition: transform .5s, opacity .5s, z-index .5s
+
+.carousel__photo.initial
+  opacity: 1
+  position: relative
+  z-index: 900
+
+.carousel__photo.active 
+  opacity: 1
+  position: relative
+  z-index: 900
+
+.carousel__photo.prev
+    z-index: 800
+
+.carousel__photo.next 
+    z-index: 800
+
+.carousel__photo.prev 
+  transform: translateX(-100%) // Move 'prev' item to the left 
+
+.carousel__photo.next 
+  transform: translateX(100%) // Move 'next' item to the right 
+
+.carousel__button--prev
+  position: absolute
+  top: 50%
+  width: 1.6rem
+  height: 1.6rem
+  background-color: #FFF
+  transform: translateY(-50%)
+  border-radius: 50%
+  cursor: pointer 
+  z-index: 1001 // Sit on top of everything */
+  border: 1px solid black
+
+.carousel__button--next 
+  position: absolute
+  top: 50%
+  width: 1.6rem
+  height: 1.6rem
+  background-color: #FFF
+  transform: translateY(-50%)
+  border-radius: 50%
+  cursor: pointer 
+  z-index: 1001 // Sit on top of everything */
+  border: 1px solid black
+
+.carousel__button--prev 
+  left: 0
+
+.carousel__button--next 
+  right: 0
+
+.carousel__button--prev::after
+  content: " "
+  position: absolute
+  width: 10px
+  height: 10px
+  top: 50%
+  left: 54%
+  border-right: 2px solid black
+  border-bottom: 2px solid black
+  transform: translate(-50%, -50%) rotate(135deg)
+
+.carousel__button--next::after 
+  content: " "
+  position: absolute
+  width: 10px
+  height: 10px
+  top: 50%
+  left: 54%
+  border-right: 2px solid black
+  border-bottom: 2px solid black
+  transform: translate(-50%, -50%) rotate(135deg)
+
+.carousel__button--next::after 
+  left: 47%
+  transform: translate(-50%, -50%) rotate(-45deg)
 
 .map-responsive
-    overflow: hidden
+    width: 100%
+    overflow:hidden
     padding-bottom: 56.25%
     position: relative
     height: 0
+    margin: 0 auto
+
+.map-responsive iframe
+
+    max-height: 500px
+    left: 0 
+    top: 0
+    height: 100%
+    width: 100%
+    position: absolute
+
+.other 
+    flex: 1 1 50%
+    margin-bottom: 20px
 
 /* Element    *****************************************************************************************************/
-
-
-.split__left
-    padding: 45px
-    display: inline-block
-    background: #c0392b
-
-.split__right
-    padding: 45px
-    display: inline-block
-    background: #2980b9
 
 .full-page__a
     text-decoration: none
     color: white   
 
-.contact__timming
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-
-.contact__block
-    display: flex
-    justify-content: center
-    align-items: center
 
 /* Modifiers    *****************************************************************************************************/    
 
@@ -179,97 +345,96 @@ body
     border-radius: 5%
     box-shadow: 2px 2px 9px 2px #555
 
-.h2--margin
-    display: flex
-    align-items: center
-    justify-content: center
-    height: 150px
-    margin: 50px 0
-    background: purple
-
-.h3--grey
-    color: #666
-
+.h3--blue
+    color: $blue-color
 
 .h4--margin
     margin-top: 40px
 
-
-.contact--margin
-    margin: 7px
-    font-size: 1.3rem
-
-%Contact-icon-size
-    font-size: $Contact-icon-size
-
-.contact--far
-    @extend %Contact-icon-size
-
-.contact--fas
-    @extend %Contact-icon-size
-
 .text-size
     font-size: $global-Text-Size * 1.1
-.form
-    display: flex
-    flex-direction: column
-    margin: 40px auto
-    justify-content: flex-end
-    align-items: center
-    max-width: 900px
-
-.form__element
-    margin: 10px
-    width: 80%
-
-.form__label
-    font-size: 0.8rem
-    display: block
-    text-align: left
-    margin-bottom: 3px
-.form__input
-    width: 100%
-    border: none
-    padding: 4px
-.form__textarea
-    width: 100%
 
 .block
     text-align: center
     margin: 4px 0
     width: 100%
     flex: 1 1 100%
-.form__submit
-    background: #3498db
-    border: 0
-    border: 1px solid #2980b9
-    color: #ffffff
-    box-shadow: 2px 2px 10px 1px #444
-    padding: 8px
-    margin: 5px 0
-    width: 100%
-    max-width: 300px
 
 
 /* Media Queries    ************************************************************************************************/
+$breakpoint-lg-phone: 480px
+
+@media screen and (min-width: $breakpoint-lg-phone) 
+    .services
+        padding-left: 15%
 
 $breakpoint-tablet: 768px
 @media screen and (min-width: $breakpoint-tablet) 
+    .h2
+        margin: 10px 0
+
+    .h3
+        font-size: 3rem
+    .contact
+        flex-direction: row
+        align-items: flex-start
+        justify-content: space-between
+    .map-responsive
+        margin-left: 3%
+    .carousel__photo 
+        padding: 1rem 4rem
+
+    .carousel__button--next 
+        width: 3rem
+        height: 3rem
+
+    .carousel__button--prev
+        width: 3rem
+        height: 3rem
+
+    .services
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        max-width: 1200px
+        flex-wrap: wrap
+        padding-left: 0
+
+    .h6
+        text-align: left
+        font-weight: 100
+
+    .service__chunk
+        margin: 40px 0px
+
+    .service__chunk--last
+        margin-top: 0
+
+    .services__p
+        text-align: left
+        color: #555
+        margin: 7px
+        font-size: 1.1rem
+        font-weight: 300
 
     .container 
         padding: 80px 60px
+
     .flex
         display: flex
         justify-content: space-between
         align-items: center  //check this line later
+  
     .wrapper 
         margin-top: 0
+    
     .img-wrapper
         margin-right: 8%
         flex: 3
         
     .full-page
         padding: 60px
+  
     .text
         font-size: $global-Text-Size
 
@@ -278,27 +443,6 @@ $breakpoint-tablet: 768px
 
     .button
         margin: 40px
- 
-    .services
-        width: 100%
-        height: auto
-        flex-direction: row
-        flex-wrap: wrap
-        justify-content: space-around
-    
-    .service
-        flex: 1 1 300px
-        margin: 15px
-                    
-    .split
-        display: flex
-    
-    %split__padding
-        padding: 50px
-    .left
-        @extend %split__padding 
-    .right
-        @extend %split__padding
 
     .h4--center
         margin: 25px
@@ -311,8 +455,9 @@ $breakpoint-tablet: 768px
     
     .img__wrapper
         flex: 1 1 30%
-
+ 
     .gallery__img:hover
         cursor: pointer
         transform: scale(1.1)
         transition-duration: 0.2s
+
